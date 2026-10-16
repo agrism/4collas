@@ -13,21 +13,16 @@
   <meta property="og:image" content="assets/images/hero_faucet.webp">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts Preconnect & Asynchronous Loading (Eliminates Render-Blocking 900ms) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"></noscript>
-
   <!-- Preload Critical LCP Hero Image (Mobile 22KB vs Desktop 54KB) -->
   <link rel="preload" as="image" href="assets/images/hero_faucet_mobile.webp" media="(max-width: 768px)" type="image/webp" fetchpriority="high">
   <link rel="preload" as="image" href="assets/images/hero_faucet.webp" media="(min-width: 769px)" type="image/webp" fetchpriority="high">
 
-  <!-- Icons FontAwesome CDN (Asynchronous Non-render-blocking) -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+  <!-- Preload Self-Hosted Fonts (Zero external DNS/TLS, same-origin HTTP/2) -->
+  <link rel="preload" href="assets/fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="styles.min.css?v=2.8">
+  <!-- Complete Standalone Stylesheet (7.2KB Gzipped, Zero External Blocking) -->
+  <link rel="stylesheet" href="styles.min.css?v=3.0">
 </head>
 <body>
 
