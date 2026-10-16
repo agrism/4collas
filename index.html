@@ -13,19 +13,21 @@
   <meta property="og:image" content="assets/images/hero_faucet.webp">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts Preconnect & Asynchronous Loading (Eliminates Render-Blocking 900ms) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"></noscript>
 
-  <!-- Preload Critical LCP Hero Image -->
-  <link rel="preload" as="image" href="assets/images/hero_faucet.webp" type="image/webp" fetchpriority="high">
+  <!-- Preload Critical LCP Hero Image (Mobile 22KB vs Desktop 54KB) -->
+  <link rel="preload" as="image" href="assets/images/hero_faucet_mobile.webp" media="(max-width: 768px)" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/hero_faucet.webp" media="(min-width: 769px)" type="image/webp" fetchpriority="high">
 
   <!-- Icons FontAwesome CDN (Asynchronous Non-render-blocking) -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-  <link rel="stylesheet" href="styles.css?v=2.7">
+  <link rel="stylesheet" href="styles.min.css?v=2.8">
 </head>
 <body>
 
@@ -121,7 +123,7 @@
   <!-- Hero Section with Crisp Faucet Visual (Exact Reference Composition) -->
   <section class="hero-section" id="sakums">
     <div class="hero-image-wrap">
-      <img src="assets/images/hero_faucet.webp" alt="4 Collas profesionālā santehnika un armatūra" class="hero-faucet-img" width="1376" height="768" fetchpriority="high" decoding="async">
+      <img srcset="assets/images/hero_faucet_mobile.webp 768w, assets/images/hero_faucet.webp 1376w" sizes="(max-width: 768px) 100vw, 1376px" src="assets/images/hero_faucet.webp" alt="4 Collas profesionālā santehnika un armatūra" class="hero-faucet-img" width="1376" height="768" fetchpriority="high" decoding="async">
       <div class="hero-gradient-overlay"></div>
       
       <div class="container hero-content-container">
@@ -746,6 +748,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=2.7" defer></script>
+  <script src="script.min.js?v=2.8" defer></script>
 </body>
 </html>
