@@ -191,35 +191,30 @@ function initMobileNav() {
 }
 
 /**
- * 5. ScrollSpy navigācijai
+ * 5. ScrollSpy navigācijai (ar IntersectionObserver bez piespiedu reflow)
  */
 function initScrollSpy() {
-  const sections = document.querySelectorAll('section[id], div[id]');
+  const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+  if (!sections.length || !navLinks.length) return;
 
-  window.addEventListener('scroll', () => {
-    let currentId = '';
-    const scrollPos = window.scrollY + 120;
-
-    sections.forEach(sec => {
-      const top = sec.offsetTop;
-      const height = sec.offsetHeight;
-      if (scrollPos >= top && scrollPos < top + height) {
-        currentId = sec.getAttribute('id');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          const parent = link.parentElement;
+          if (link.getAttribute('href') === `#${id}`) {
+            parent.classList.add('active');
+          } else {
+            parent.classList.remove('active');
+          }
+        });
       }
     });
+  }, { threshold: 0.2, rootMargin: '-80px 0px -40% 0px' });
 
-    if (currentId) {
-      navLinks.forEach(link => {
-        const parent = link.parentElement;
-        if (link.getAttribute('href') === `#${currentId}`) {
-          parent.classList.add('active');
-        } else {
-          parent.classList.remove('active');
-        }
-      });
-    }
-  });
+  sections.forEach(sec => observer.observe(sec));
 }
 
 /**

@@ -486,13 +486,14 @@ button {
   position: relative;
   min-height: 520px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
 }
 
 @media (min-width: 992px) {
   .hero-image-wrap {
     min-height: 580px;
+    align-items: flex-start;
   }
 }
 
@@ -525,7 +526,7 @@ button {
 .hero-content-container {
   position: relative;
   z-index: 3;
-  padding: 60px 20px 80px;
+  padding: 80px 20px 80px;
   max-width: 760px;
 }
 
