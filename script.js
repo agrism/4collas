@@ -67,7 +67,8 @@ function initModals() {
     document.getElementById('openTameBtn'),
     document.getElementById('heroWhatsAppBtn'),
     document.getElementById('ctaWhatsAppModalBtn'),
-    document.getElementById('mobileWhatsAppBtn')
+    document.getElementById('mobileWhatsAppBtn'),
+    document.getElementById('warehouseWhatsAppBtn')
   ];
 
   const closeQuoteBtn = document.getElementById('closeQuoteModalBtn');
