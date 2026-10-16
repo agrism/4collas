@@ -1396,19 +1396,23 @@ button {
 }
 
 .btn-tiktok-follow {
-  background-color: var(--color-dark);
+  background-color: #000000;
   color: #FFF;
-  padding: 10px 20px;
+  padding: 10px 18px;
   border-radius: var(--radius-pill);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: var(--transition);
 }
 
 .btn-tiktok-follow:hover {
-  background-color: var(--color-red);
+  background-color: #111827;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 242, 254, 0.35);
 }
 
 /* TikTok Video Grid */
@@ -2358,6 +2362,15 @@ button {
   min-height: 280px;
   background: #000;
   overflow: hidden;
+  position: relative;
+}
+
+.compilation-img-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
 }
 
 .compilation-img {
@@ -2367,7 +2380,32 @@ button {
   transition: var(--transition);
 }
 
-.social-compilation-box:hover .compilation-img {
-  transform: scale(1.02);
+.compilation-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #FFF;
+  opacity: 0;
+  transition: var(--transition);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.compilation-img-overlay i {
+  font-size: 2.2rem;
+  color: #00F2FE;
+}
+
+.compilation-img-link:hover .compilation-img-overlay {
+  opacity: 1;
+}
+
+.compilation-img-link:hover .compilation-img {
+  transform: scale(1.04);
 }
 
