@@ -18,8 +18,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Icons FontAwesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Preload Critical LCP Hero Image -->
+  <link rel="preload" as="image" href="assets/images/hero_faucet.webp" type="image/webp" fetchpriority="high">
+
+  <!-- Icons FontAwesome CDN (Asynchronous Non-render-blocking) -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
   <link rel="stylesheet" href="styles.css?v=2.7">
 </head>
@@ -117,7 +121,7 @@
   <!-- Hero Section with Crisp Faucet Visual (Exact Reference Composition) -->
   <section class="hero-section" id="sakums">
     <div class="hero-image-wrap">
-      <img src="assets/images/hero_faucet.webp" alt="4 Collas profesionālā santehnika un armatūra" class="hero-faucet-img">
+      <img src="assets/images/hero_faucet.webp" alt="4 Collas profesionālā santehnika un armatūra" class="hero-faucet-img" width="1376" height="768" fetchpriority="high" decoding="async">
       <div class="hero-gradient-overlay"></div>
       
       <div class="container hero-content-container">
@@ -224,7 +228,7 @@
         <!-- Master Technician Portrait -->
         <div class="quote-image-col">
           <div class="technician-card">
-            <img src="assets/images/owner_4collas.webp" alt="SIA 4 Collas vadītājs un meistars veikalā Katlakalna 9" class="technician-img">
+            <img src="assets/images/owner_4collas.webp" alt="SIA 4 Collas vadītājs un meistars veikalā Katlakalna 9" class="technician-img" width="460" height="822" loading="lazy" decoding="async">
             <div class="experience-badge">
               <span class="years">20+</span>
               <span class="label">Gadu pieredze Katlakalna 9</span>
@@ -382,7 +386,7 @@
         </div>
 
         <div class="sanpro-visual">
-          <img src="assets/images/bathroom_showroom.webp" alt="Vannas istabas ekspozīcija sanpro.lv" class="sanpro-img">
+          <img src="assets/images/bathroom_showroom.webp" alt="Vannas istabas ekspozīcija sanpro.lv" class="sanpro-img" width="1200" height="896" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -394,7 +398,7 @@
       <div class="tiktok-header-box">
         <div class="tiktok-profile-meta">
           <div class="tiktok-avatar-wrap">
-            <img src="assets/images/owner_4collas.webp" alt="4collas.sia TikTok konts" class="tiktok-avatar">
+            <img src="assets/images/owner_4collas.webp" alt="4collas.sia TikTok konts" class="tiktok-avatar" width="60" height="60" loading="lazy" decoding="async">
             <span class="tiktok-live-dot"></span>
           </div>
           <div class="tiktok-meta-text">
@@ -437,7 +441,7 @@
       <div class="tiktok-videos-grid">
         <a href="https://www.tiktok.com/@4collas.sia/video/7690895360071306518" target="_blank" rel="noopener" class="tiktok-video-card" title="Atvērt video TikTok">
           <div class="video-thumbnail-wrap">
-            <img src="assets/images/owner_laba_cena.webp" alt="Ko nozīmē laba cena santehnikā?" class="video-thumb video-thumb-cena">
+            <img src="assets/images/owner_laba_cena.webp" alt="Ko nozīmē laba cena santehnikā?" class="video-thumb video-thumb-cena" width="462" height="636" loading="lazy" decoding="async">
             <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
             <div class="video-views"><i class="fa-brands fa-tiktok"></i> TikTok Video</div>
           </div>
@@ -452,7 +456,7 @@
 
         <a href="https://www.tiktok.com/@4collas.sia/video/7690543421630532886" target="_blank" rel="noopener" class="tiktok-video-card" title="Atvērt video TikTok">
           <div class="video-thumbnail-wrap">
-            <img src="assets/images/owner_ilgi_jagaida.webp" alt="Cik ilgi jāgaida pasūtījums?" class="video-thumb video-thumb-gaidit">
+            <img src="assets/images/owner_ilgi_jagaida.webp" alt="Cik ilgi jāgaida pasūtījums?" class="video-thumb video-thumb-gaidit" width="462" height="743" loading="lazy" decoding="async">
             <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
             <div class="video-views"><i class="fa-brands fa-tiktok"></i> TikTok Video</div>
           </div>
@@ -467,7 +471,7 @@
 
         <a href="https://www.tiktok.com/@4collas.sia/video/7688652081682468118" target="_blank" rel="noopener" class="tiktok-video-card" title="Atvērt video TikTok">
           <div class="video-thumbnail-wrap">
-            <img src="assets/images/owner_4collas.webp" alt="4 Collas noliktava un meistaru serviss" class="video-thumb video-thumb-noliktava">
+            <img src="assets/images/owner_4collas.webp" alt="4 Collas noliktava un meistaru serviss" class="video-thumb video-thumb-noliktava" width="460" height="822" loading="lazy" decoding="async">
             <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
             <div class="video-views"><i class="fa-brands fa-tiktok"></i> TikTok Video</div>
           </div>
@@ -507,8 +511,8 @@
           </div>
         </div>
         <div class="compilation-right">
-          <a href="https://www.tiktok.com/@4collas.sia" target="_blank" rel="noopener" class="compilation-img-link" title="Atvērt TikTok @4collas.sia">
-            <img src="assets/images/social_video_grid.webp" alt="4 Collas video apskati TikTok @4collas.sia" class="compilation-img">
+          <a href="https://www.tiktok.com/@4collas.sia" target="_blank" rel="noopener" class="compilation-img-link" title="Atvērt TikTok @4collas.sia" aria-label="Atvērt TikTok @4collas.sia profilu jaunā cilnē">
+            <img src="assets/images/social_video_grid.webp" alt="4 Collas video apskati TikTok @4collas.sia" class="compilation-img" width="1024" height="547" loading="lazy" decoding="async">
             <div class="compilation-img-overlay">
               <i class="fa-brands fa-tiktok"></i>
               <span>Atvērt TikTok profilu</span>
@@ -574,7 +578,7 @@
         <!-- Left: Real Store Entrance & Location Highlight -->
         <div class="warehouse-visual-col">
           <div class="warehouse-img-frame">
-            <img src="assets/images/store_entrance.webp" alt="4 Collas veikals un noliktava Katlakalna 9, Rīga" class="warehouse-store-img">
+            <img src="assets/images/store_entrance.webp" alt="4 Collas veikals un noliktava Katlakalna 9, Rīga" class="warehouse-store-img" width="1080" height="1080" loading="lazy" decoding="async">
             <div class="warehouse-overlay-badge">
               <span class="pulse-indicator"></span>
               <span>Katlakalna iela 9, Rīga</span>
@@ -701,7 +705,7 @@
   <!-- WhatsApp Fast Quote Modal -->
   <div class="modal-overlay" id="quoteModal" aria-hidden="true">
     <div class="modal-box">
-      <button class="modal-close-btn" id="closeQuoteModalBtn">&times;</button>
+      <button class="modal-close-btn" id="closeQuoteModalBtn" aria-label="Aizvērt modālo logu">&times;</button>
       <div class="modal-header">
         <div class="modal-badge"><i class="fa-brands fa-whatsapp"></i> Ātrā Saziņa</div>
         <h3>Pieprasīt Tāmi vai Konsultāciju</h3>
@@ -742,6 +746,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=2.7"></script>
+  <script src="script.js?v=2.7" defer></script>
 </body>
 </html>
