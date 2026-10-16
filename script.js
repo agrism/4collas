@@ -1,12 +1,11 @@
 /**
  * 4 COLLAS - Galvenais Skripts
- * Interaktivitāte, darba laika kalkulators, WhatsApp tāmes ģenerators un nomas aprēķins
+ * Interaktivitāte, darba laika kalkulators, WhatsApp tāmes ģenerators un meistaru B2B atbalsts
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initStoreStatus();
   initModals();
-  initRentalCalculator();
   initMobileNav();
   initScrollSpy();
   initQuickSearch();
@@ -61,11 +60,10 @@ function initStoreStatus() {
 }
 
 /**
- * 2. Modālo Logu Pārvaldība (WhatsApp Tāme & Noma)
+ * 2. Modālo Logu Pārvaldība (WhatsApp Tāme & Meistaru Sadarbība)
  */
 function initModals() {
   const quoteModal = document.getElementById('quoteModal');
-  const rentalModal = document.getElementById('rentalModal');
 
   const openQuoteBtns = [
     document.getElementById('openTameBtn'),
@@ -76,7 +74,6 @@ function initModals() {
   ];
 
   const closeQuoteBtn = document.getElementById('closeQuoteModalBtn');
-  const closeRentalBtn = document.getElementById('closeRentalModalBtn');
 
   // Atvērt Tāmes modāli
   openQuoteBtns.forEach(btn => {
@@ -88,30 +85,24 @@ function initModals() {
     }
   });
 
-  // Aizvēršanas pogas
+  // Aizvēršanas poga
   if (closeQuoteBtn) {
     closeQuoteBtn.addEventListener('click', () => closeModal(quoteModal));
   }
-  if (closeRentalBtn) {
-    closeRentalBtn.addEventListener('click', () => closeModal(rentalModal));
-  }
 
   // Aizvērt, uzklikšķinot uz fona
-  [quoteModal, rentalModal].forEach(modal => {
-    if (modal) {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          closeModal(modal);
-        }
-      });
-    }
-  });
+  if (quoteModal) {
+    quoteModal.addEventListener('click', (e) => {
+      if (e.target === quoteModal) {
+        closeModal(quoteModal);
+      }
+    });
+  }
 
   // ESC taustiņš
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeModal(quoteModal);
-      closeModal(rentalModal);
     }
   });
 
@@ -157,76 +148,16 @@ function closeModal(modal) {
 }
 
 /**
- * 3. Instrumentu Nomas Kalkulators & Rezervācija
+ * 3. Meistaru & Tāmes Modāļa atvēršana ar tēmas atlasi
  */
-let currentTool = { name: 'REMS Akku-Press', pricePerDay: 15.00 };
-
-window.openRentalModal = function(toolName, priceStr) {
-  const rentalModal = document.getElementById('rentalModal');
-  const titleEl = document.getElementById('rentalModalTitle');
-  const priceEl = document.getElementById('rentalModalPrice');
-  const selectedToolInput = document.getElementById('selectedToolInput');
-  const rentalDateInput = document.getElementById('rentalDate');
-
-  currentTool.name = toolName;
-  currentTool.pricePerDay = parseFloat(priceStr) || 15.00;
-
-  if (titleEl) titleEl.textContent = `Rezervēt: ${toolName}`;
-  if (priceEl) priceEl.textContent = `€ ${currentTool.pricePerDay.toFixed(2)}`;
-  if (selectedToolInput) selectedToolInput.value = toolName;
-
-  // Iestatīt noklusēto datumu kā rītdienu
-  if (rentalDateInput && !rentalDateInput.value) {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    rentalDateInput.value = tomorrow.toISOString().split('T')[0];
-    rentalDateInput.min = new Date().toISOString().split('T')[0];
+window.openQuoteModal = function(topic) {
+  const quoteModal = document.getElementById('quoteModal');
+  const topicSelect = document.getElementById('quoteTopic');
+  if (topic && topicSelect) {
+    topicSelect.value = topic;
   }
-
-  updateRentalTotal();
-  openModal(rentalModal);
+  openModal(quoteModal);
 };
-
-function initRentalCalculator() {
-  const daysInput = document.getElementById('rentalDays');
-  if (daysInput) {
-    daysInput.addEventListener('input', updateRentalTotal);
-  }
-
-  const rentalForm = document.getElementById('rentalForm');
-  if (rentalForm) {
-    rentalForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const days = parseInt(document.getElementById('rentalDays').value, 10) || 1;
-      const date = document.getElementById('rentalDate').value;
-      const contact = document.getElementById('rentalContact').value.trim();
-      const totalSum = (days * currentTool.pricePerDay).toFixed(2);
-
-      const message = `Labdien! Vēlos pieteikt instrumenta nomu Katlakalna ielā 9:
-- Instruments: ${currentTool.name}
-- Nomas ilgums: ${days} diena(s)
-- Vēlamais saņemšanas datums: ${date}
-- Orientējošā nomas maksa: € ${totalSum} (ar PVN)
-- Kontaktpersona: ${contact}
-
-Lūdzu apstiprināt instrumenta pieejamību.`;
-
-      const waUrl = `https://wa.me/37167530063?text=${encodeURIComponent(message)}`;
-      window.open(waUrl, '_blank');
-      closeModal(document.getElementById('rentalModal'));
-    });
-  }
-}
-
-function updateRentalTotal() {
-  const daysInput = document.getElementById('rentalDays');
-  const totalSumEl = document.getElementById('rentalTotalSum');
-  if (!daysInput || !totalSumEl) return;
-
-  const days = Math.max(1, parseInt(daysInput.value, 10) || 1);
-  const total = days * currentTool.pricePerDay;
-  totalSumEl.textContent = `€ ${total.toFixed(2)}`;
-}
 
 /**
  * 4. Mobilās Izvēlnes Pārvaldība
@@ -302,8 +233,8 @@ function initQuickSearch() {
     const val = (searchInput ? searchInput.value : '').trim().toLowerCase();
     if (!val) return;
 
-    if (val.includes('noma') || val.includes('rems') || val.includes('prese') || val.includes('īre')) {
-      const el = document.getElementById('noma');
+    if (val.includes('meistar') || val.includes('sadarb') || val.includes('vairum') || val.includes('b2b')) {
+      const el = document.getElementById('sadarbiba');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else if (val.includes('tiktok') || val.includes('video') || val.includes('padom')) {
       const el = document.getElementById('tiktok');
