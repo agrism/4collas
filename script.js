@@ -49,9 +49,9 @@ function initStoreStatus() {
       indicator.style.boxShadow = '0 0 8px rgba(239, 68, 68, 0.8)';
     }
     if (day === 5 && currentTimeVal >= closeTimeVal) {
-      statusText.textContent = 'Slēgts • Pirmdien no 08:00';
+      statusText.textContent = 'Slēgts • Pirmdien no 8:00';
     } else if (day === 6 || day === 0) {
-      statusText.textContent = 'Brīvdiena • Pirmdien no 08:00';
+      statusText.textContent = 'Brīvdiena • Pirmdien no 8:00';
     } else if (currentTimeVal < openTimeVal) {
       statusText.textContent = 'Atvērts no 08:00';
     } else {
