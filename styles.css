@@ -1,0 +1,2216 @@
+/* ==========================================================================
+   4 COLLAS - Galvenais Stilu Fails
+   Iedvesmots no arhitektūras santehnikas standartiem un Pinterest references
+   ========================================================================== */
+
+:root {
+  /* Zīmola krāsu palete */
+  --color-red: #D32F2F;
+  --color-red-hover: #B71C1C;
+  --color-dark: #12151A;
+  --color-dark-surface: #1E222A;
+  --color-text-main: #2C343F;
+  --color-text-muted: #64748B;
+  --color-border: #E2E8F0;
+  --color-bg-light: #F8FAFC;
+  --color-bg-alt: #EDF2F7;
+  --color-white: #FFFFFF;
+
+  /* References 4 toņu bloki */
+  --tone-sage: #7E9777;
+  --tone-sage-dark: #677E60;
+  --tone-ochre: #B5A872;
+  --tone-ochre-dark: #9A8D5B;
+  --tone-teal: #57939B;
+  --tone-teal-dark: #447A81;
+  --tone-slate: #4A6273;
+  --tone-slate-dark: #374B59;
+
+  /* WhatsApp & Akcentu krāsas */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #1EBE5D;
+  --color-yellow: #F59E0B;
+
+  /* Tipogrāfija */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Pārejas un ēnas */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.16);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Bāzes reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 60px; /* telpa mobilajai joslai */
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  transition: var(--transition);
+}
+
+/* Konteiners */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   TOP BAR (Paziņojumu & Kontaktu Josla)
+   ========================================================================== */
+.top-bar {
+  background-color: #0E1116;
+  color: #CBD5E1;
+  font-size: 0.85rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.top-contacts {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.top-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.top-item i {
+  color: var(--color-red);
+  font-size: 0.85rem;
+}
+
+.top-phone:hover {
+  color: var(--color-white);
+}
+
+.hours-status {
+  background-color: rgba(255, 255, 255, 0.06);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-indicator.open {
+  background-color: #22C55E;
+  box-shadow: 0 0 8px #22C55E;
+}
+
+.top-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.top-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  color: #FFFFFF;
+}
+
+.top-social-link:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.badge-pill {
+  background: var(--color-red);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 3px;
+}
+
+.top-sanpro-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #F8FAFC;
+  font-weight: 600;
+}
+
+.top-sanpro-link:hover {
+  color: var(--color-yellow);
+}
+
+/* ==========================================================================
+   MAIN HEADER (Logotips, Meklētājs, CTA pogas)
+   ========================================================================== */
+.main-header {
+  background: var(--color-white);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Logo (Izgatavots tieši pēc oriģinālās izkārtnes Katlakalna 9) */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-symbol {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 10px rgba(211, 47, 47, 0.35);
+}
+
+.brand-number {
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-right: 5px;
+}
+
+.brand-word {
+  font-size: 1.35rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.brand-caption {
+  display: flex;
+  flex-direction: column;
+}
+
+.caption-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--color-dark);
+}
+
+.caption-sub {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+
+/* Header Pogas */
+.header-actions {
+  display: none;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .header-actions {
+    display: flex;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.btn-outline {
+  border: 1.5px solid #25D366;
+  color: #128C7E;
+  background: rgba(37, 211, 102, 0.06);
+}
+
+.btn-outline:hover {
+  background: #25D366;
+  color: #FFF;
+}
+
+.whatsapp-icon {
+  color: #25D366;
+  font-size: 1.1rem;
+}
+
+.btn-outline:hover .whatsapp-icon {
+  color: #FFF;
+}
+
+.btn-primary {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-red);
+  transform: translateY(-1px);
+}
+
+.btn-sanpro {
+  background: linear-gradient(135deg, #1E293B, #0F172A);
+  border: 1px solid #334155;
+}
+
+/* Mobilā pogas pārslēgs */
+.mobile-nav-toggle {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--color-dark);
+  padding: 6px;
+}
+
+@media (min-width: 992px) {
+  .mobile-nav-toggle {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   HORIZONTAL NAVIGATION BAR (Iedvesmots no References Melnās Joslas)
+   ========================================================================== */
+.nav-bar {
+  background-color: #111419;
+  border-bottom: 2px solid var(--color-red);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.nav-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: visible;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  flex-wrap: nowrap;
+}
+
+.nav-item {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 14px 16px;
+  color: #E2E8F0;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+@media (min-width: 992px) and (max-width: 1239px) {
+  .nav-link {
+    padding: 14px 11px;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+  }
+}
+
+.nav-link:hover,
+.nav-item.active .nav-link {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-red);
+}
+
+.nav-phone-direct {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(211, 47, 47, 0.2);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(211, 47, 47, 0.4);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1240px) {
+  .nav-phone-direct {
+    display: inline-flex;
+  }
+}
+
+.nav-phone-direct:hover {
+  background: var(--color-red);
+}
+
+/* Mobilā atveramā izvēlne */
+@media (max-width: 991px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #111419;
+    padding: 10px 0;
+  }
+  .nav-menu.open {
+    display: flex;
+  }
+  .nav-link {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* ==========================================================================
+   HERO SECTION (Kvalitatīva Faucet Bilde + Teksts)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  background-color: #0E1117;
+}
+
+.hero-image-wrap {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (min-width: 992px) {
+  .hero-image-wrap {
+    min-height: 580px;
+  }
+}
+
+.hero-faucet-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  z-index: 1;
+}
+
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 17, 23, 0.94) 0%,
+    rgba(14, 17, 23, 0.85) 45%,
+    rgba(14, 17, 23, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+.hero-content-container {
+  position: relative;
+  z-index: 3;
+  padding: 60px 20px 80px;
+  max-width: 760px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 20px;
+}
+
+.hero-badge i {
+  color: var(--color-red);
+}
+
+.hero-headline {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 768px) {
+  .hero-headline {
+    font-size: 3.2rem;
+  }
+}
+
+.hero-subtext {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #E2E8F0;
+  margin-bottom: 30px;
+  max-width: 620px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn-hero-primary {
+  background-color: var(--color-red);
+  color: #FFFFFF;
+  padding: 13px 26px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 18px rgba(211, 47, 47, 0.4);
+}
+
+.btn-hero-primary:hover {
+  background-color: var(--color-red-hover);
+  transform: translateY(-2px);
+}
+
+.btn-hero-secondary {
+  background-color: #25D366;
+  color: #FFFFFF;
+  padding: 13px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-hero-secondary:hover {
+  background-color: #1EBE5D;
+  transform: translateY(-2px);
+}
+
+.btn-hero-sanpro {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  padding: 13px 22px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-hero-sanpro:hover {
+  background: rgba(255, 255, 255, 0.28);
+  color: #FFF;
+}
+
+/* Slider punktiņi (kā referencē o o o) */
+.hero-slider-dots {
+  position: absolute;
+  left: 30px;
+  bottom: 24px;
+  z-index: 4;
+  display: flex;
+  gap: 8px;
+}
+
+.hero-slider-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  cursor: pointer;
+}
+
+.hero-slider-dots .dot.active {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+/* ==========================================================================
+   4 TONAL CARDS DOCKED UNDER HERO (Exact Reference Architecture)
+   ========================================================================== */
+.category-tonal-strip {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .category-tonal-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .category-tonal-strip {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.category-card {
+  padding: 40px 30px 35px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 4 toņi no references attēla */
+.card-sage {
+  background-color: var(--tone-sage);
+}
+.card-sage:hover {
+  background-color: var(--tone-sage-dark);
+}
+
+.card-ochre {
+  background-color: var(--tone-ochre);
+}
+.card-ochre:hover {
+  background-color: var(--tone-ochre-dark);
+}
+
+.card-teal {
+  background-color: var(--tone-teal);
+}
+.card-teal:hover {
+  background-color: var(--tone-teal-dark);
+}
+
+.card-slate {
+  background-color: var(--tone-slate);
+}
+.card-slate:hover {
+  background-color: var(--tone-slate-dark);
+}
+
+.card-icon-wrap {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  margin-bottom: 22px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  color: #FFFFFF;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 26px;
+  flex: 1;
+}
+
+.card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  opacity: 0.9;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 4px;
+  align-self: flex-start;
+}
+
+.card-btn:hover {
+  opacity: 1;
+  border-bottom-color: #FFFFFF;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   COMMERCIAL HEADLINE SECTION (Matches Reference Typography)
+   ========================================================================== */
+.section {
+  padding: 70px 0;
+}
+
+.commercial-section {
+  background-color: var(--color-white);
+  padding: 85px 0 60px;
+}
+
+.sub-tagline {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--color-red);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.commercial-title {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #1A1F26;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+  .commercial-title {
+    font-size: 3.4rem;
+  }
+}
+
+.commercial-lead {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.commercial-divider {
+  width: 80px;
+  height: 4px;
+  background-color: var(--color-red);
+  margin: 0 auto 24px;
+}
+
+.commercial-body {
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ==========================================================================
+   FAST QUOTE SECTION & MASTER PROFILE (Matches Reference Worker Layout)
+   ========================================================================== */
+.fast-quote-section {
+  background-color: var(--color-bg-light);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .quote-grid {
+    grid-template-columns: 420px 1fr;
+    gap: 60px;
+  }
+}
+
+.technician-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+.technician-img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.experience-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color-dark);
+  color: #FFFFFF;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  border-left: 4px solid var(--color-red);
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-badge .years {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-white);
+}
+
+.experience-badge .label {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Labā kolonna ar Cirtainajām Iekavām un Sarakstu */
+.highlight-label {
+  display: inline-block;
+  background: rgba(211, 47, 47, 0.1);
+  color: var(--color-red);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+}
+
+.quote-heading {
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+}
+
+.text-red {
+  color: var(--color-red);
+}
+
+.quote-desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #475569;
+  margin-bottom: 26px;
+}
+
+.quote-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 35px;
+}
+
+.btn-red-cta {
+  background-color: #E2442F; /* Reference Orange/Red color */
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 13px 26px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 14px rgba(226, 68, 47, 0.35);
+}
+
+.btn-red-cta:hover {
+  background-color: #C83522;
+  transform: translateY(-2px);
+}
+
+.btn-outline-dark {
+  border: 1.5px solid #CBD5E1;
+  background: #FFF;
+  color: var(--color-dark);
+  font-weight: 600;
+  padding: 13px 22px;
+  border-radius: var(--radius-md);
+}
+
+.btn-outline-dark:hover {
+  border-color: var(--color-dark);
+  background: var(--color-dark);
+  color: #FFF;
+}
+
+/* Bracket saraksts — precīzs references risinājums */
+.bracket-list-container {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #FFFFFF;
+  padding: 24px 28px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.bracket-visual {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .bracket-visual {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.curly-brace {
+  font-size: 6rem;
+  line-height: 1;
+  color: #E2E8F0;
+  font-family: serif;
+  user-select: none;
+}
+
+.bracket-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.bracket-list li {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* ==========================================================================
+   TOOL RENTAL SECTION (INSTRUMENTU NOMA)
+   ========================================================================== */
+.rental-section {
+  background-color: var(--color-white);
+}
+
+.section-header {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.rental-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .rental-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.rental-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
+
+.rental-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: #CBD5E1;
+}
+
+.rental-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: var(--color-red);
+  color: #FFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  z-index: 2;
+}
+
+.rental-img-wrap {
+  height: 200px;
+  overflow: hidden;
+  background: #F1F5F9;
+}
+
+.rental-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.rental-card:hover .rental-img {
+  transform: scale(1.05);
+}
+
+.rental-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.rental-body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-dark);
+}
+
+.rental-body p {
+  font-size: 0.88rem;
+  color: #64748B;
+  line-height: 1.55;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.rental-pricing {
+  margin-bottom: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.price-val {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+}
+
+.price-unit {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.btn-rental {
+  background-color: var(--color-dark);
+  color: #FFF;
+  width: 100%;
+  padding: 11px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-rental:hover {
+  background-color: var(--color-red);
+}
+
+/* ==========================================================================
+   SANPRO.LV E-VEIKALA VITRĪNA
+   ========================================================================== */
+.sanpro-section {
+  background-color: #0E1218;
+  color: #FFFFFF;
+}
+
+.sanpro-banner {
+  background: linear-gradient(135deg, #181D26 0%, #0F131A 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: var(--shadow-xl);
+}
+
+@media (min-width: 992px) {
+  .sanpro-banner {
+    grid-template-columns: 1fr 480px;
+  }
+}
+
+.sanpro-content {
+  padding: 45px 35px;
+}
+
+@media (min-width: 768px) {
+  .sanpro-content {
+    padding: 60px 50px;
+  }
+}
+
+.sanpro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--color-yellow);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.sanpro-heading {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  color: #FFFFFF;
+}
+
+.highlight-yellow {
+  color: var(--color-yellow);
+}
+
+.sanpro-sub {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #CBD5E1;
+  margin-bottom: 30px;
+}
+
+.sanpro-categories-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+@media (min-width: 600px) {
+  .sanpro-categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sanpro-cat-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  color: #E2E8F0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sanpro-cat-pill i {
+  color: var(--color-yellow);
+}
+
+.sanpro-cat-pill:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #FFF;
+  transform: translateX(3px);
+}
+
+.btn-sanpro-large {
+  background-color: var(--color-yellow);
+  color: #0E1218;
+  font-weight: 800;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.35);
+}
+
+.btn-sanpro-large:hover {
+  background-color: #FBBF24;
+  transform: translateY(-2px);
+}
+
+.sanpro-visual {
+  height: 320px;
+}
+
+@media (min-width: 992px) {
+  .sanpro-visual {
+    height: 100%;
+  }
+}
+
+.sanpro-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   TIKTOK @4COLLAS.SIA SECTION
+   ========================================================================== */
+.tiktok-section {
+  background-color: var(--color-bg-light);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tiktok-header-box {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 992px) {
+  .tiktok-header-box {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+  }
+}
+
+.tiktok-profile-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.tiktok-avatar-wrap {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+.tiktok-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-dark);
+}
+
+.tiktok-live-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-red);
+  border: 3px solid #FFF;
+  border-radius: 50%;
+}
+
+.tiktok-handle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tiktok-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 4px;
+}
+
+.tiktok-bio {
+  font-size: 0.9rem;
+  color: #64748B;
+  max-width: 500px;
+}
+
+.tiktok-stats-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--color-border);
+}
+
+.btn-tiktok-follow {
+  background-color: var(--color-dark);
+  color: #FFF;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-tiktok-follow:hover {
+  background-color: var(--color-red);
+}
+
+/* TikTok Video Grid */
+.tiktok-videos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .tiktok-videos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tiktok-video-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.tiktok-video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.video-thumbnail-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0.88;
+  transition: var(--transition);
+}
+
+.tiktok-video-card:hover .video-thumb {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: var(--transition);
+}
+
+.tiktok-video-card:hover .video-play-btn {
+  background: var(--color-red);
+  color: #FFF;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-views {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  color: #FFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.video-card-body {
+  padding: 20px;
+}
+
+.video-card-body h4 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-dark);
+}
+
+.video-card-body p {
+  font-size: 0.85rem;
+  color: #64748B;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.video-link {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-red);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.video-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   PILLARS & REFERENCE 3-COLUMN FOOTER INFORMATION
+   ========================================================================== */
+.pillars-section {
+  background-color: var(--color-white);
+  padding: 70px 0;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 992px) {
+  .pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+.pillar-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--color-dark);
+  margin-bottom: 22px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color-dark);
+}
+
+/* Kolonna 1: Atsauksmes */
+.testimonial-card {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.quote-stars {
+  color: #F59E0B;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #334155;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.testimonial-author strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--color-dark);
+}
+
+.testimonial-author span {
+  font-size: 0.78rem;
+  color: #64748B;
+}
+
+/* Kolonna 2: Zīmoli */
+.pillar-desc {
+  font-size: 0.9rem;
+  color: #64748B;
+  margin-bottom: 18px;
+}
+
+.brands-chip-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.brand-chip {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-chip i {
+  color: var(--color-red);
+  font-size: 0.8rem;
+}
+
+.support-box {
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: 12px;
+  color: #1E3A8A;
+}
+
+.support-box i {
+  font-size: 1.3rem;
+  color: #2563EB;
+}
+
+.support-box strong {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.support-box p {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  margin: 0;
+  color: #1E40AF;
+}
+
+/* Kolonna 3: Lokācija */
+.location-box {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.location-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.red-box {
+  background: var(--color-red);
+  color: #FFF;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 0.95rem;
+}
+
+.location-address {
+  font-size: 0.9rem;
+  color: #334155;
+  line-height: 1.5;
+  margin-bottom: 18px;
+  display: flex;
+  gap: 10px;
+}
+
+.location-address i {
+  color: var(--color-red);
+  font-size: 1rem;
+  margin-top: 3px;
+}
+
+.location-hours {
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 12px 0;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hours-row .closed {
+  color: #DC2626;
+  font-weight: 600;
+}
+
+.location-phones {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.88rem;
+  margin-bottom: 20px;
+}
+
+.location-phones div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.location-phones i {
+  color: var(--color-red);
+  width: 16px;
+}
+
+.location-phones a {
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.location-phones a:hover {
+  color: var(--color-red);
+}
+
+.btn-map {
+  background: var(--color-dark);
+  color: #FFF;
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-map:hover {
+  background: var(--color-red);
+}
+
+/* ==========================================================================
+   MAIN FOOTER
+   ========================================================================== */
+.main-footer {
+  background-color: #0B0E13;
+  color: #94A3B8;
+  padding: 30px 0;
+  font-size: 0.82rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .footer-inner {
+    flex-direction: row;
+  }
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-brand {
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: #CBD5E1;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   FLOATING MOBILE STICKY BAR
+   ========================================================================== */
+.mobile-sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  z-index: 99;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 992px) {
+  .mobile-sticky-bar {
+    display: none;
+  }
+}
+
+.mobile-bar-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  gap: 4px;
+}
+
+.mobile-bar-btn i {
+  font-size: 1.1rem;
+}
+
+.mobile-bar-btn.phone i {
+  color: var(--color-dark);
+}
+
+.mobile-bar-btn.whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+}
+
+.mobile-bar-btn.whatsapp i {
+  color: #FFFFFF;
+}
+
+.mobile-bar-btn.sanpro {
+  background: #111827;
+  color: #FBBF24;
+}
+
+/* ==========================================================================
+   MODĀLIE LOGI (WhatsApp Tāme & Nomas Rezervācija)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-box {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  max-width: 520px;
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 1.8rem;
+  color: #94A3B8;
+  line-height: 1;
+}
+
+.modal-close-btn:hover {
+  color: var(--color-dark);
+}
+
+.modal-header {
+  margin-bottom: 22px;
+}
+
+.modal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.1);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+}
+
+.modal-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 6px;
+}
+
+.modal-header p {
+  font-size: 0.9rem;
+  color: #64748B;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border: 1px solid var(--color-border);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--color-text-main);
+  background: var(--color-bg-light);
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-dark);
+  background: #FFF;
+  box-shadow: 0 0 0 3px rgba(18, 21, 26, 0.08);
+}
+
+.rental-total-preview {
+  background: #F1F5F9;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--color-dark);
+}
+
+.rental-total-preview strong {
+  font-size: 1.3rem;
+  color: var(--color-red);
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-whatsapp-submit {
+  background-color: #25D366;
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 13px;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-whatsapp-submit:hover {
+  background-color: #1EBE5D;
+}
+
+.btn-call-direct {
+  background-color: #F1F5F9;
+  color: var(--color-dark);
+  font-weight: 600;
+  padding: 11px;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-call-direct:hover {
+  background-color: #E2E8F0;
+}
+
+/* ==========================================================================
+   PAPILDU SOCIĀLO TĪKLU UN VIDEO BANERA STILI
+   ========================================================================== */
+.social-btn-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-insta-follow {
+  background: linear-gradient(45deg, #F09433 0%, #E6683C 25%, #DC2743 50%, #CC2366 75%, #BC1888 100%);
+  color: #FFF;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 4px 12px rgba(220, 39, 67, 0.25);
+}
+
+.btn-insta-follow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(220, 39, 67, 0.4);
+}
+
+.btn-fb-follow {
+  background-color: #1877F2;
+  color: #FFF;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 4px 12px rgba(24, 119, 242, 0.25);
+}
+
+.btn-fb-follow:hover {
+  background-color: #1464CC;
+  transform: translateY(-2px);
+}
+
+.instagram-badge i {
+  color: #E1306C;
+}
+
+.facebook-badge i {
+  color: #1877F2;
+}
+
+/* 10-Video sērijas baneris */
+.social-compilation-box {
+  margin-top: 45px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: var(--shadow-md);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .social-compilation-box {
+    grid-template-columns: 460px 1fr;
+  }
+}
+
+.compilation-left {
+  padding: 35px 30px;
+}
+
+@media (min-width: 768px) {
+  .compilation-left {
+    padding: 45px 40px;
+  }
+}
+
+.compilation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(211, 47, 47, 0.1);
+  color: var(--color-red);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+}
+
+.compilation-left h3 {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.compilation-left p {
+  font-size: 0.95rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.compilation-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.compilation-tags span {
+  background: #F1F5F9;
+  color: #334155;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.compilation-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.compilation-right {
+  height: 100%;
+  min-height: 280px;
+  background: #000;
+  overflow: hidden;
+}
+
+.compilation-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.social-compilation-box:hover .compilation-img {
+  transform: scale(1.02);
+}
+

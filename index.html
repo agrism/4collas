@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4 Collas | Apkures, ūdensapgādes un kanalizācijas sistēmas Rīgā, Katlakalna 9</title>
+  <meta name="description" content="SIA 4 Collas — profesionāla santehnika, apkures iekārtas, cauruļvadi, kanalizācija, instrumenti un nomas serviss Katlakalna ielā 9, Rīgā. E-veikals sanpro.lv, TikTok @4collas.sia.">
+  <meta name="keywords" content="4 collas, santehnika, apkure, radiatori, caurules, fitingi, kanalizācija, instrumentu noma, rems noma, makita, sanpro.lv, Katlakalna 9">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="4 Collas — Santehnika, Apkure un Cauruļvadu Sistēmas">
+  <meta property="og:description" content="Vairumtirdzniecība un mazumtirdzniecība meistariem un privātpersonām. Noliktava Rīgā, Katlakalna ielā 9.">
+  <meta property="og:image" content="assets/images/hero_faucet.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Utility Announcement & Contact Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-contacts">
+        <span class="top-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Katlakalna iela 9, Rīga, LV-1073</span>
+        </span>
+        <span class="top-item hours-status" id="storeStatus">
+          <span class="status-indicator open"></span>
+          <span id="statusText">Šodien atvērts: 08:00 – 18:00</span>
+        </span>
+        <a href="tel:+37167530063" class="top-item top-phone">
+          <i class="fa-solid fa-phone"></i>
+          <span>Veikals: <strong>+371 67530063</strong></span>
+        </a>
+        <a href="tel:+37167530062" class="top-item top-phone">
+          <i class="fa-solid fa-warehouse"></i>
+          <span>Noliktava: <strong>+371 67530062</strong></span>
+        </a>
+      </div>
+
+      <div class="top-links">
+        <a href="https://www.tiktok.com/@4collas.sia" target="_blank" rel="noopener" class="top-social-link tiktok-badge">
+          <i class="fa-brands fa-tiktok"></i>
+          <span>TikTok <strong>@4collas.sia</strong></span>
+          <span class="badge-pill">34K patīk</span>
+        </a>
+        <a href="https://www.instagram.com/4collas" target="_blank" rel="noopener" class="top-social-link instagram-badge">
+          <i class="fa-brands fa-instagram"></i>
+          <span><strong>@4collas</strong></span>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100091605113114" target="_blank" rel="noopener" class="top-social-link facebook-badge">
+          <i class="fa-brands fa-facebook-f"></i>
+          <span>Facebook</span>
+        </a>
+        <a href="https://sanpro.lv" target="_blank" rel="noopener" class="top-sanpro-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>E-veikals: <strong>sanpro.lv</strong></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Main Bar -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="#sakums" class="brand-logo" id="brandLogo">
+        <div class="brand-symbol">
+          <span class="brand-number">4</span>
+          <span class="brand-word">COLLAS</span>
+        </div>
+        <div class="brand-caption">
+          <span class="caption-title">APKURE & SANTEHNIKA</span>
+          <span class="caption-sub">Vairum & Mazumtirdzniecība</span>
+        </div>
+      </a>
+
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <button class="btn btn-outline" id="openTameBtn">
+          <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
+          <span>WhatsApp Tāme</span>
+        </button>
+        <a href="https://sanpro.lv" target="_blank" rel="noopener" class="btn btn-primary btn-sanpro">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>sanpro.lv Veikals</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Atvērt izvēlni">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Horizontal Dark Navigation Bar (Inspired by Reference) -->
+  <nav class="nav-bar" id="mainNavBar">
+    <div class="container nav-bar-inner">
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item active"><a href="#sakums" class="nav-link">SĀKUMS</a></li>
+        <li class="nav-item"><a href="#par-mums" class="nav-link">PAR MUMS</a></li>
+        <li class="nav-item"><a href="#kategorijas" class="nav-link">SORTIMENTS</a></li>
+        <li class="nav-item"><a href="#noma" class="nav-link">NOMA</a></li>
+        <li class="nav-item"><a href="#sanpro" class="nav-link">SANPRO.LV</a></li>
+        <li class="nav-item"><a href="#tiktok" class="nav-link">VIDEO & TIKTOK</a></li>
+        <li class="nav-item"><a href="#kontakti" class="nav-link">KONTAKTI</a></li>
+      </ul>
+      <div class="nav-extra">
+        <a href="tel:+37167530063" class="nav-phone-direct">
+          <i class="fa-solid fa-phone-volume"></i> +371 67530063
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Crisp Faucet Visual (Exact Reference Composition) -->
+  <section class="hero-section" id="sakums">
+    <div class="hero-image-wrap">
+      <img src="assets/images/hero_faucet.jpg" alt="4 Collas profesionālā santehnika un armatūra" class="hero-faucet-img">
+      <div class="hero-gradient-overlay"></div>
+      
+      <div class="container hero-content-container">
+        <div class="hero-badge">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>SIA 4 Collas — Katlakalna iela 9, Rīga</span>
+        </div>
+        <h1 class="hero-headline">
+          Kvalitatīva Santehnika,<br>
+          Apkure un Cauruļvadu Sistēmas
+        </h1>
+        <p class="hero-subtext">
+          Vairāk nekā 10 000 preču uz vietas noliktavā meistariem un privātpersonām. 
+          Plašs Eiropas zīmolu klāsts, tehniskās konsultācijas un profesionālo instrumentu noma.
+        </p>
+        <div class="hero-buttons">
+          <a href="#kategorijas" class="btn btn-hero-primary">Apskatīt Preču Sortimentu</a>
+          <button class="btn btn-hero-secondary" id="heroWhatsAppBtn">
+            <i class="fa-brands fa-whatsapp"></i> Nosūtīt Tāmi WhatsApp
+          </button>
+          <a href="https://sanpro.lv" target="_blank" rel="noopener" class="btn btn-hero-sanpro">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Iepirkties sanpro.lv
+          </a>
+        </div>
+      </div>
+
+      <!-- Slider indicator dots as shown in reference -->
+      <div class="hero-slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <!-- 4 Tonal Feature Cards Docked Under Hero (Exact Reference Architecture) -->
+    <div class="category-tonal-strip" id="kategorijas">
+      <div class="category-card card-sage">
+        <div class="card-icon-wrap">
+          <i class="fa-solid fa-faucet-drip"></i>
+        </div>
+        <h3 class="card-title">ŪDENSAPGĀDE & CAURUĻVADI</h3>
+        <p class="card-desc">
+          Kapara caurules, daudzslāņu caurules Sanha MultiFit-Flex, fitingi, noslēgarmatūra, lodveida krāni Arco, hidrofori un filtri.
+        </p>
+        <a href="#sanpro" class="card-btn" data-category="udensapgade">
+          Uzzināt vairāk <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="category-card card-ochre">
+        <div class="card-icon-wrap">
+          <i class="fa-solid fa-temperature-arrow-up"></i>
+        </div>
+        <h3 class="card-title">APKURES SISTĒMAS</h3>
+        <p class="card-desc">
+          Vogel & Noot radiatori, silto grīdu kolektori un caurules, Danfoss termogalvas un balansēšanas vārsti, Atlantic ūdens sildītāji.
+        </p>
+        <a href="#sanpro" class="card-btn" data-category="apkure">
+          Uzzināt vairāk <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="category-card card-teal">
+        <div class="card-icon-wrap">
+          <i class="fa-solid fa-water"></i>
+        </div>
+        <h3 class="card-title">KANALIZĀCIJA & DRENĀŽA</h3>
+        <p class="card-desc">
+          Wavin un Pipelife iekšējā un ārējā kanalizācija, trokšņu slāpējošās caurules, gūlijas, drenāžas akas un savienojumi.
+        </p>
+        <a href="#sanpro" class="card-btn" data-category="kanalizacija">
+          Uzzināt vairāk <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="category-card card-slate">
+        <div class="card-icon-wrap">
+          <i class="fa-solid fa-bath"></i>
+        </div>
+        <h3 class="card-title">SANTEHNIKA & KERAMIKA</h3>
+        <p class="card-desc">
+          Brīvi stāvošas vannas Balteco & PAA, dušas kabīnes, iebūvējamie WC rāmji Schell, Herz & Tres ūdens maisītāji sanpro.lv e-veikalā.
+        </p>
+        <a href="https://sanpro.lv" target="_blank" rel="noopener" class="card-btn">
+          sanpro.lv Katalogs <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Big Central Headline Section (Matches Reference COMMERCIAL Section) -->
+  <section class="section commercial-section">
+    <div class="container text-center">
+      <span class="sub-tagline">SIA 4 COLLAS // KOPŠ 2005. GADA</span>
+      <h2 class="commercial-title">VAIRUMTIRDZNIECĪBA & MEISTARU CENTRS</h2>
+      <p class="commercial-lead">
+        PROFESIONĀLS APRĪKOJUMS, MATERIĀLI UN IEKĀRTU NOMA KATLAKALNA IELĀ 9
+      </p>
+      <div class="commercial-divider"></div>
+      <p class="commercial-body">
+        Nodrošinām pilnu inženiersistēmu komplektāciju privātmājām, daudzdzīvokļu ēkām un komercobjektiem. 
+        Mūsu veikalā un noliktavā vienmēr pieejamas sertificētas Eiropas ražotāju iekārtas par izdevīgām cenām gan būvniekiem, gan meistariem.
+      </p>
+    </div>
+  </section>
+
+  <!-- Emergency / Fast Quote Section with Master Visual (Matches Reference Composition) -->
+  <section class="section fast-quote-section">
+    <div class="container">
+      <div class="quote-grid">
+        <!-- Master Technician Portrait -->
+        <div class="quote-image-col">
+          <div class="technician-card">
+            <img src="assets/images/owner_4collas.png" alt="SIA 4 Collas vadītājs un meistars veikalā Katlakalna 9" class="technician-img">
+            <div class="experience-badge">
+              <span class="years">20+</span>
+              <span class="label">Gadu pieredze Katlakalna 9</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote Info & Curly Bracket List -->
+        <div class="quote-content-col">
+          <span class="highlight-label">TŪLĪTĒJA APSTRĀDE & SAIMNIEKA PADOMS</span>
+          <h2 class="quote-heading">
+            ĀTRĀ TĀME & MEISTARA<br>
+            <span class="text-red">KONSULTĀCIJA 15 MINŪTĒS</span>
+          </h2>
+          <p class="quote-desc">
+            Nāc ciemos uz Katlakalna ielu 9 vai atsūti objekta plānu, specifikāciju vai materiālu sarakstu WhatsApp. Mūsu komanda ar saimnieku priekšgalā operatīvi pārbaudīs noliktavas atlikumus un iedos labāko cenu gan meistariem, gan būvētājiem!
+          </p>
+
+          <div class="quote-actions-row">
+            <button class="btn btn-red-cta" id="ctaWhatsAppModalBtn">
+              <i class="fa-brands fa-whatsapp"></i> Pieteikt Tāmi WhatsApp
+            </button>
+            <a href="tel:+37167530063" class="btn btn-outline-dark">
+              <i class="fa-solid fa-phone"></i> Zvanīt: 67530063
+            </a>
+          </div>
+
+          <!-- Feature List Styled with Bracket & Bullet Points -->
+          <div class="bracket-list-container">
+            <div class="bracket-visual">
+              <div class="curly-brace">}</div>
+            </div>
+            <ul class="bracket-list">
+              <li>• Profesionālo REMS cauruļu presēšanas iekārtu noma</li>
+              <li>• Pāri 10 000 nomenklatūras vienībām Rīgas noliktavā</li>
+              <li>• Daudzslāņu caurules (16mm līdz 63mm) un visi fitingi</li>
+              <li>• Ātrā preču komplektēšana un izsniegšana pie rampas</li>
+              <li>• Speciālās vairumtirdzniecības cenas montāžas uzņēmumiem</li>
+              <li>• Oriģinālā Danfoss, Herz, Sanha, Wavin un Wilo produkcija</li>
+              <li>• Piegāde tieši uz objektu visā Latvijā un Baltijā</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Tool Rental Section (NOMA) -->
+  <section class="section rental-section" id="noma">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-tagline">EKONOMĒ SAVUS LĪDZEKĻUS</span>
+        <h2 class="section-title">PROFESIONĀLO INSTRUMENTU NOMA</h2>
+        <p class="section-subtitle">
+          Izīrē kvalitatīvas iekārtas montāžas darbiem Katlakalna ielā 9. Teicami uzturēti un pārbaudīti instrumenti.
+        </p>
+      </div>
+
+      <div class="rental-grid">
+        <div class="rental-card">
+          <div class="rental-badge">Populārākais</div>
+          <div class="rental-img-wrap">
+            <img src="assets/images/tools_pipes.jpg" alt="REMS akumulatora presēšanas iekārta" class="rental-img">
+          </div>
+          <div class="rental-body">
+            <h3>REMS Akku-Press / Mini-Press</h3>
+            <p>Universāla akumulatora radiālā prese cauruļu savienojumiem TH, U, V profiliem (16-32mm). Ideāli piemērota Sanha un citiem fitingiem.</p>
+            <div class="rental-pricing">
+              <span class="price-val">15.00 €</span>
+              <span class="price-unit">/ diennaktī (ar PVN)</span>
+            </div>
+            <button class="btn btn-rental" onclick="openRentalModal('REMS Akku-Press', '15.00')">
+              <i class="fa-solid fa-calendar-check"></i> Rezervēt Nomas Laiku
+            </button>
+          </div>
+        </div>
+
+        <div class="rental-card">
+          <div class="rental-img-wrap">
+            <img src="assets/images/heating_manifold.jpg" alt="Hidrauliskais spiediena pārbaudes sūknis" class="rental-img">
+          </div>
+          <div class="rental-body">
+            <h3>Hidrauliskās pārbaudes sūknis</h3>
+            <p>Precīza apkures un ūdensvada sistēmu hermētiskuma pārbaude līdz 60 bāriem. Iekļauta kalibrēta manometra kontrole.</p>
+            <div class="rental-pricing">
+              <span class="price-val">10.00 €</span>
+              <span class="price-unit">/ diennaktī (ar PVN)</span>
+            </div>
+            <button class="btn btn-rental" onclick="openRentalModal('Hidrauliskais pārbaudes sūknis', '10.00')">
+              <i class="fa-solid fa-calendar-check"></i> Rezervēt Nomas Laiku
+            </button>
+          </div>
+        </div>
+
+        <div class="rental-card">
+          <div class="rental-img-wrap">
+            <img src="assets/images/store_entrance.jpg" alt="Elektriskais vītņgriezis un cauruļu griezējs" class="rental-img">
+          </div>
+          <div class="rental-body">
+            <h3>Elektriskais vītņgriezis & PPR metinātājs</h3>
+            <p>Tērauda cauruļu vītņu griešanai (1/2" - 2") un polipropilēna (PPR) cauruļu sakausēšanas aparāts ar matricām.</p>
+            <div class="rental-pricing">
+              <span class="price-val">12.00 €</span>
+              <span class="price-unit">/ diennaktī (ar PVN)</span>
+            </div>
+            <button class="btn btn-rental" onclick="openRentalModal('Elektriskais vītņgriezis / PPR aparāts', '12.00')">
+              <i class="fa-solid fa-calendar-check"></i> Rezervēt Nomas Laiku
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sanpro.lv Showcase Section (Direct Link to Online Catalog) -->
+  <section class="section sanpro-section" id="sanpro">
+    <div class="container">
+      <div class="sanpro-banner">
+        <div class="sanpro-content">
+          <div class="sanpro-badge">
+            <i class="fa-solid fa-store"></i> OFICIĀLAIS E-VEIKALS
+          </div>
+          <h2 class="sanpro-heading">
+            Iepērcies tiešsaistē: <span class="highlight-yellow">sanpro.lv</span>
+          </h2>
+          <p class="sanpro-sub">
+            Viss vannas istabai, virtuvei un apkurei. Vairāk nekā 5 000 produktu ar tūlītēju pasūtīšanu, piegādi visā Latvijā vai bezmaksas saņemšanu mūsu veikalā Katlakalna ielā 9.
+          </p>
+
+          <div class="sanpro-categories-grid">
+            <a href="https://sanpro.lv/vannas" target="_blank" rel="noopener" class="sanpro-cat-pill">
+              <i class="fa-solid fa-bath"></i> Brīvi stāvošas vannas (Balteco, PAA)
+            </a>
+            <a href="https://sanpro.lv/dusas" target="_blank" rel="noopener" class="sanpro-cat-pill">
+              <i class="fa-solid fa-shower"></i> Dušas kabīnes & teknes (Radaway)
+            </a>
+            <a href="https://sanpro.lv/udens-maisitaji-jaucejkrani" target="_blank" rel="noopener" class="sanpro-cat-pill">
+              <i class="fa-solid fa-faucet"></i> Jaucējkrāni (Herz, TRES)
+            </a>
+            <a href="https://sanpro.lv/apkure" target="_blank" rel="noopener" class="sanpro-cat-pill">
+              <i class="fa-solid fa-fire-burner"></i> Radiatori (Vogel & Noot)
+            </a>
+            <a href="https://sanpro.lv/udens-silditaji-boileri" target="_blank" rel="noopener" class="sanpro-cat-pill">
+              <i class="fa-solid fa-bottle-water"></i> Boileri (Atlantic Group)
+            </a>
+            <a href="https://sanpro.lv/instrumenti" target="_blank" rel="noopener" class="sanpro-cat-pill">
+              <i class="fa-solid fa-screwdriver-wrench"></i> Instrumenti (Makita, Knipex)
+            </a>
+          </div>
+
+          <div class="sanpro-cta-wrap">
+            <a href="https://sanpro.lv" target="_blank" rel="noopener" class="btn btn-sanpro-large">
+              Atvērt pilno katalogu sanpro.lv <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="sanpro-visual">
+          <img src="assets/images/bathroom_showroom.jpg" alt="Vannas istabas ekspozīcija sanpro.lv" class="sanpro-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TikTok @4collas.sia Social & Media Hub -->
+  <section class="section tiktok-section" id="tiktok">
+    <div class="container">
+      <div class="tiktok-header-box">
+        <div class="tiktok-profile-meta">
+          <div class="tiktok-avatar-wrap">
+            <img src="assets/images/owner_4collas.png" alt="4collas.sia TikTok konts" class="tiktok-avatar">
+            <span class="tiktok-live-dot"></span>
+          </div>
+          <div class="tiktok-meta-text">
+            <span class="tiktok-handle">TIKTOK // INSTAGRAM // FACEBOOK</span>
+            <h2 class="tiktok-title">Seko 4 Collas komandai sociālajos tīklos!</h2>
+            <p class="tiktok-bio">Praktiski padomi santehniķiem, materiālu apskati, noliktavas aizkulises un laba deva humora no Katlakalna ielas 9.</p>
+          </div>
+        </div>
+
+        <div class="tiktok-stats-bar">
+          <div class="stat-item">
+            <span class="stat-number">5.7K+</span>
+            <span class="stat-label">TikTok Sekotāji</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">34.0K+</span>
+            <span class="stat-label">Patīk</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">470+</span>
+            <span class="stat-label">Video</span>
+          </div>
+          <div class="social-btn-group">
+            <a href="https://www.tiktok.com/@4collas.sia" target="_blank" rel="noopener" class="btn btn-tiktok-follow">
+              <i class="fa-brands fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://www.instagram.com/4collas" target="_blank" rel="noopener" class="btn btn-insta-follow">
+              <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100091605113114" target="_blank" rel="noopener" class="btn btn-fb-follow">
+              <i class="fa-brands fa-facebook-f"></i> Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Video Showcase Grid with Owner Screenshots -->
+      <div class="tiktok-videos-grid">
+        <div class="tiktok-video-card">
+          <div class="video-thumbnail-wrap">
+            <img src="assets/images/owner_laba_cena.png" alt="Laba cena? 4 Collas noliktava" class="video-thumb">
+            <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
+            <div class="video-views"><i class="fa-solid fa-eye"></i> 45.2K</div>
+          </div>
+          <div class="video-card-body">
+            <h4>LABA CENA? Meistaru atlaides</h4>
+            <p>Saimnieks stāsta par īpašajiem sadarbības nosacījumiem montieriem un vairumpircējiem mūsu noliktavā Katlakalna 9.</p>
+            <a href="https://www.tiktok.com/@4collas.sia" target="_blank" rel="noopener" class="video-link">
+              Skatīties TikTok <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="tiktok-video-card">
+          <div class="video-thumbnail-wrap">
+            <img src="assets/images/owner_ilgi_jagaida.png" alt="Ilgi jāgaida? Preču komplektācija" class="video-thumb">
+            <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
+            <div class="video-views"><i class="fa-solid fa-eye"></i> 52.1K</div>
+          </div>
+          <div class="video-card-body">
+            <h4>ILGI JĀGAIDA? Tūlītēja izsniegšana</h4>
+            <p>Kā mēs nodrošinām, ka montierim pie rampas nav jātērē dārgais laiks un materiāli tiek sakomplektēti minūtēs.</p>
+            <a href="https://www.tiktok.com/@4collas.sia" target="_blank" rel="noopener" class="video-link">
+              Skatīties TikTok <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="tiktok-video-card">
+          <div class="video-thumbnail-wrap">
+            <img src="assets/images/owner_4collas.png" alt="Makita sortiments Katlakalna 9 veikalā" class="video-thumb">
+            <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
+            <div class="video-views"><i class="fa-solid fa-eye"></i> 38.5K</div>
+          </div>
+          <div class="video-card-body">
+            <h4>MAKITA SORTIMENTS & Jaunumi</h4>
+            <p>Akumulatora šķēres, presēšanas aprīkojums un instrumenti profesionāļiem ar oficiālo garantiju.</p>
+            <a href="https://www.instagram.com/4collas" target="_blank" rel="noopener" class="video-link">
+              Skatīties Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Video Series Banner (10 Video Compilation) -->
+      <div class="social-compilation-box">
+        <div class="compilation-left">
+          <span class="compilation-badge"><i class="fa-solid fa-fire"></i> TRENDOJOŠS SATURS</span>
+          <h3>Viss par un ap inženiersistēmām</h3>
+          <p>Skaties mūsu video sērijas par granulu katliem, freona caurulēm, gaiss-gaiss siltumsūkņiem un aktuālajām akcijām!</p>
+          <div class="compilation-tags">
+            <span>#NekasNetrūkst</span>
+            <span>#GaissGaissSiltumsūkņi</span>
+            <span>#GranuluKatli</span>
+            <span>#FreonaCaurules</span>
+            <span>#MēmākāAkcija</span>
+          </div>
+          <div class="compilation-ctas">
+            <a href="https://www.instagram.com/4collas" target="_blank" rel="noopener" class="btn btn-insta-follow">
+              <i class="fa-brands fa-instagram"></i> Instagram @4collas
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100091605113114" target="_blank" rel="noopener" class="btn btn-fb-follow">
+              <i class="fa-brands fa-facebook-f"></i> Facebook Lapa
+            </a>
+          </div>
+        </div>
+        <div class="compilation-right">
+          <img src="assets/images/social_video_grid.jpg" alt="4 Collas video apskati sociālajos tīklos" class="compilation-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-Column Info & Testimonials Block (Exact Reference Footer Pillars) -->
+  <section class="section pillars-section" id="par-mums">
+    <div class="container">
+      <div class="pillars-grid">
+        <!-- Column 1: Testimonials -->
+        <div class="pillar-col">
+          <h3 class="pillar-title">KLIENTU ATSAUKSMES</h3>
+          <div class="testimonial-card">
+            <div class="quote-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              „Ar 4 Collas sadarbojamies jau vairākus gadus privātmāju ciematos Pierīgā. Vienmēr operatīvi sakomplektē materiālus, ja kaut kā trūkst objektā — pusstundas laikā jau esam pie rampas Katlakalna 9.”
+            </p>
+            <div class="testimonial-author">
+              <strong>Jānis Bērziņš</strong>
+              <span>Santehnikas & apkures montāžas meistars</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="quote-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              „Lieliska instrumentu noma! Izīrējām REMS presi uz nedēļas nogali — viss darbojās nevainojami, personāls laipni izskaidroja pareizās spīles.”
+            </p>
+            <div class="testimonial-author">
+              <strong>Artūrs K.</strong>
+              <span>Privātmājas saimnieks, Mārupe</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Brands & Specializations -->
+        <div class="pillar-col">
+          <h3 class="pillar-title">VADOŠIE EIROPAS ZĪMOLI</h3>
+          <p class="pillar-desc">
+            Pārstāvam tikai pārbaudītus un sertificētus ražotājus ar oficiālu garantiju un tehnisko atbalstu:
+          </p>
+          <div class="brands-chip-list">
+            <span class="brand-chip"><i class="fa-solid fa-check"></i> Danfoss (Dānija)</span>
+            <span class="brand-chip"><i class="fa-solid fa-check"></i> Herz Armaturen (Austrija)</span>
+            <span class="brand-chip"><i class="fa-solid fa-check"></i> Wavin & Pipelife (Nīderlande/Austrija)</span>
+            <span class="brand-chip"><i class="fa-solid fa-check"></i> Sanha Cauruļvadi (Vācija)</span>
+            <span class="brand-chip"><i class="fa-solid fa-check"></i> Vogel & Noot Radiatori</span>
+            <span class="brand-chip"><i class="fa-solid fa-check"></i> Schell Iebūvējamās Sistēmas</span>
+            <span class="brand-chip"><i class="fa-solid fa-check"></i> Arco Noslēgarmatūra (Spānija)</span>
+            <span class="brand-chip"><i class="fa-solid fa-check"></i> Atlantic Group Boileri</span>
+            <span class="brand-chip"><i class="fa-solid fa-check"></i> Makita & Knipex Instrumenti</span>
+          </div>
+          <div class="support-box">
+            <i class="fa-solid fa-circle-question"></i>
+            <div>
+              <strong>Nepieciešama tehniskā shēma?</strong>
+              <p>Mūsu inženieri palīdzēs izvēlēties pareizos sūkņus un diametrus.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3: Locations & Contacts -->
+        <div class="pillar-col" id="kontakti">
+          <h3 class="pillar-title">VEIKALS & NOLIKTAVA</h3>
+          <div class="location-box">
+            <div class="location-header-logo">
+              <span class="red-box">4 COLLAS</span>
+              <span>SIA</span>
+            </div>
+            <p class="location-address">
+              <i class="fa-solid fa-location-dot"></i>
+              <strong>Katlakalna iela 9, Rīga, LV-1073</strong><br>
+              (Ērta piebraukšana un bezmaksas stāvvieta arī mikroautobusiem)
+            </p>
+            <div class="location-hours">
+              <div class="hours-row">
+                <span>Pirmdiena – Piektdiena:</span>
+                <strong>08:00 – 18:00</strong>
+              </div>
+              <div class="hours-row">
+                <span>Sestdiena:</span>
+                <span class="closed">Slēgts</span>
+              </div>
+              <div class="hours-row">
+                <span>Svētdiena:</span>
+                <span class="closed">Slēgts</span>
+              </div>
+            </div>
+            <div class="location-phones">
+              <div><i class="fa-solid fa-phone"></i> Veikals: <a href="tel:+37167530063">+371 67530063</a></div>
+              <div><i class="fa-solid fa-warehouse"></i> Noliktava: <a href="tel:+37167530062">+371 67530062</a></div>
+              <div><i class="fa-solid fa-envelope"></i> E-pasts: <a href="mailto:4collas@4collas.lv">4collas@4collas.lv</a></div>
+            </div>
+            <a href="https://maps.google.com/?q=Katlakalna+iela+9,+Rīga" target="_blank" rel="noopener" class="btn btn-map">
+              <i class="fa-solid fa-diamond-turn-right"></i> Atvērt Google Maps Maršrutu
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Bottom -->
+  <footer class="main-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-brand">4 COLLAS SIA</span>
+        <span>Reģ. nr.: 40103223287 | PVN nr.: LV40103223287</span>
+        <span>© 2026 SIA "4 Collas". Visas tiesības aizsargātas.</span>
+      </div>
+      <div class="footer-links">
+        <a href="#sakums">Sākums</a>
+        <a href="#par-mums">Par Mums</a>
+        <a href="#noma">Noma</a>
+        <a href="https://sanpro.lv" target="_blank" rel="noopener">E-veikals sanpro.lv</a>
+        <a href="https://www.tiktok.com/@4collas.sia" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.instagram.com/4collas" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=100091605113114" target="_blank" rel="noopener">Facebook</a>
+        <a href="#kontakti">Kontakti</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Mobile Quick Bar -->
+  <div class="mobile-sticky-bar">
+    <a href="tel:+37167530063" class="mobile-bar-btn phone">
+      <i class="fa-solid fa-phone"></i>
+      <span>Zvanīt</span>
+    </a>
+    <button class="mobile-bar-btn whatsapp" id="mobileWhatsAppBtn">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>WhatsApp Tāme</span>
+    </button>
+    <a href="https://sanpro.lv" target="_blank" rel="noopener" class="mobile-bar-btn sanpro">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span>sanpro.lv</span>
+    </a>
+  </div>
+
+  <!-- WhatsApp Fast Quote Modal -->
+  <div class="modal-overlay" id="quoteModal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="closeQuoteModalBtn">&times;</button>
+      <div class="modal-header">
+        <div class="modal-badge"><i class="fa-brands fa-whatsapp"></i> Ātrā Saziņa</div>
+        <h3>Pieprasīt Tāmi vai Konsultāciju</h3>
+        <p>Aizpildiet laukus vai uzreiz nosūtiet sagatavoto ziņu mūsu menedžerim WhatsApp!</p>
+      </div>
+      <form id="quoteForm" class="modal-form">
+        <div class="form-group">
+          <label for="quoteName">Jūsu Vārds / Uzņēmums:</label>
+          <input type="text" id="quoteName" placeholder="Piemēram, SIA Montāža vai Jānis" required>
+        </div>
+        <div class="form-group">
+          <label for="quotePhone">Tālrunis saziņai:</label>
+          <input type="tel" id="quotePhone" placeholder="+371 20000000" required>
+        </div>
+        <div class="form-group">
+          <label for="quoteTopic">Interesējošais jautājums / materiāli:</label>
+          <select id="quoteTopic">
+            <option value="Tāmes aprēķins apkures sistēmai">Tāmes aprēķins apkures sistēmai</option>
+            <option value="Cauruļvadi un noslēgarmatūra">Cauruļvadi un noslēgarmatūra</option>
+            <option value="REMS instrumentu noma">REMS instrumentu noma</option>
+            <option value="Vairumtirdzniecības sadarbība">Vairumtirdzniecības sadarbība meistariem</option>
+            <option value="Santehnikas iegāde no sanpro.lv">Santehnikas iegāde no sanpro.lv</option>
+            <option value="Cits jautājums">Cits jautājums</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="quoteNotes">Materiālu saraksts vai komentārs:</label>
+          <textarea id="quoteNotes" rows="3" placeholder="Piemēram, 200m daudzslāņu caurule 16x2.0, 6 loku kolektors ar plūsmas mērītājiem..."></textarea>
+        </div>
+        <div class="modal-buttons">
+          <button type="submit" class="btn btn-whatsapp-submit">
+            <i class="fa-brands fa-whatsapp"></i> Atvērt WhatsApp ar šo tāmi
+          </button>
+          <button type="button" class="btn btn-call-direct" onclick="window.location.href='tel:+37167530063'">
+            <i class="fa-solid fa-phone"></i> Zvanīt: 67530063
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Tool Rental Reservation Modal -->
+  <div class="modal-overlay" id="rentalModal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="closeRentalModalBtn">&times;</button>
+      <div class="modal-header">
+        <div class="modal-badge"><i class="fa-solid fa-wrench"></i> Nomas Rezervācija</div>
+        <h3 id="rentalModalTitle">Instrumenta Noma</h3>
+        <p>Cena: <strong id="rentalModalPrice">€ 15.00</strong> / diennaktī (ar PVN)</p>
+      </div>
+      <form id="rentalForm" class="modal-form">
+        <input type="hidden" id="selectedToolInput">
+        <div class="form-group">
+          <label for="rentalDays">Nomas ilgums (dienas):</label>
+          <input type="number" id="rentalDays" min="1" max="30" value="1" required>
+        </div>
+        <div class="form-group">
+          <label for="rentalDate">Vēlamais saņemšanas datums Katlakalna 9:</label>
+          <input type="date" id="rentalDate" required>
+        </div>
+        <div class="form-group">
+          <label for="rentalContact">Jūsu Tālrunis / Vārds:</label>
+          <input type="text" id="rentalContact" placeholder="+371 29000000 (Jānis)" required>
+        </div>
+        <div class="rental-total-preview">
+          <span>Kopējā orientējošā nomas maksa:</span>
+          <strong id="rentalTotalSum">€ 15.00</strong>
+        </div>
+        <div class="modal-buttons">
+          <button type="submit" class="btn btn-red-cta">
+            <i class="fa-brands fa-whatsapp"></i> Apstiprināt Rezervāciju WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
