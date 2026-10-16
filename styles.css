@@ -107,32 +107,43 @@ button {
    TOP BAR (Paziņojumu & Kontaktu Josla)
    ========================================================================== */
 .top-bar {
-  background-color: #0E1116;
-  color: #CBD5E1;
-  font-size: 0.85rem;
-  padding: 8px 0;
+  background-color: #0c0f14;
+  color: #94A3B8;
+  font-size: 0.8125rem;
+  padding: 7px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  line-height: 1;
 }
 
 .top-bar-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-wrap: nowrap;
+  gap: 16px;
+  min-height: 26px;
 }
 
-.top-contacts {
+.top-left {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .top-item {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
+  color: #CBD5E1;
+  white-space: nowrap;
 }
 
 .top-item i {
@@ -140,69 +151,165 @@ button {
   font-size: 0.85rem;
 }
 
-.top-phone:hover {
-  color: var(--color-white);
+.top-divider {
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 0 2px;
+  flex-shrink: 0;
 }
 
 .hours-status {
-  background-color: rgba(255, 255, 255, 0.06);
-  padding: 3px 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
   border-radius: var(--radius-pill);
+  font-size: 0.775rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .status-indicator {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   display: inline-block;
+  flex-shrink: 0;
 }
 
 .status-indicator.open {
   background-color: #22C55E;
-  box-shadow: 0 0 8px #22C55E;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.8);
 }
 
-.top-links {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.status-indicator.closed {
+  background-color: #EF4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.8);
 }
 
-.top-social-link {
+.top-phone {
+  color: #CBD5E1;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color var(--transition-fast);
+}
+
+.top-phone:hover {
+  color: #FFFFFF;
+}
+
+.top-phone strong {
+  color: #FFFFFF;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+.top-social-icons {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
+}
+
+.social-icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 25px;
+  padding: 0 8px;
   background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-pill);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.social-icon-circle i {
   font-size: 0.8rem;
   color: #FFFFFF;
 }
 
-.top-social-link:hover {
-  background: rgba(255, 255, 255, 0.18);
+.social-icon-circle .social-badge {
+  background: var(--color-red);
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 8px;
+  line-height: 1.2;
 }
 
-.badge-pill {
-  background: var(--color-red);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 2px 6px;
-  border-radius: 10px;
-  margin-left: 3px;
+.social-icon-circle.tiktok:hover {
+  background: #000000;
+  border-color: #00F2FE;
+  box-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+}
+
+.social-icon-circle.instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  border-color: transparent;
+}
+
+.social-icon-circle.facebook:hover {
+  background: #1877F2;
+  border-color: transparent;
 }
 
 .top-sanpro-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 4px 10px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: var(--radius-pill);
   color: #F8FAFC;
+  font-size: 0.775rem;
   font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.top-sanpro-link i {
+  color: var(--color-yellow);
+  font-size: 0.8rem;
 }
 
 .top-sanpro-link:hover {
-  color: var(--color-yellow);
+  background: rgba(245, 158, 11, 0.25);
+  border-color: var(--color-yellow);
+  color: #FFFFFF;
+}
+
+@media (max-width: 1080px) {
+  .top-noliktava-phone,
+  .top-phone-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 820px) {
+  .top-left .top-divider,
+  .top-left .hours-status {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .top-bar {
+    padding: 6px 0;
+  }
+  .top-bar-inner {
+    justify-content: space-between;
+  }
+  .top-social-icons {
+    display: none;
+  }
+  .top-divider {
+    display: none;
+  }
 }
 
 /* ==========================================================================

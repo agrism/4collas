@@ -36,22 +36,26 @@ function initStoreStatus() {
   const indicator = statusEl.querySelector('.status-indicator');
 
   if (isOpen) {
-    if (indicator) indicator.className = 'status-indicator open';
-    statusText.textContent = `Šodien atvērts līdz 18:00 (Katlakalna 9)`;
+    if (indicator) {
+      indicator.className = 'status-indicator open';
+      indicator.style.backgroundColor = '';
+      indicator.style.boxShadow = '';
+    }
+    statusText.textContent = 'Atvērts līdz 18:00';
   } else {
     if (indicator) {
-      indicator.className = 'status-indicator';
+      indicator.className = 'status-indicator closed';
       indicator.style.backgroundColor = '#EF4444';
-      indicator.style.boxShadow = '0 0 8px #EF4444';
+      indicator.style.boxShadow = '0 0 8px rgba(239, 68, 68, 0.8)';
     }
     if (day === 5 && currentTimeVal >= closeTimeVal) {
-      statusText.textContent = 'Slēgts • Gaidīsim Pirmdien no 08:00';
+      statusText.textContent = 'Slēgts • Pirmdien no 08:00';
     } else if (day === 6 || day === 0) {
-      statusText.textContent = 'Brīvdiena • Gaidīsim Pirmdien no 08:00';
+      statusText.textContent = 'Brīvdiena • Pirmdien no 08:00';
     } else if (currentTimeVal < openTimeVal) {
-      statusText.textContent = `Šodien atvērts no 08:00 līdz 18:00`;
+      statusText.textContent = 'Atvērts no 08:00';
     } else {
-      statusText.textContent = `Slēgts • Rīt atvērts no 08:00 līdz 18:00`;
+      statusText.textContent = 'Slēgts • Rīt no 08:00';
     }
   }
 }
