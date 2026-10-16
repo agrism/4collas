@@ -17,12 +17,12 @@
   --color-white: #FFFFFF;
 
   /* References 4 toņu bloki */
-  --tone-sage: #7E9777;
-  --tone-sage-dark: #677E60;
-  --tone-ochre: #B5A872;
-  --tone-ochre-dark: #9A8D5B;
-  --tone-teal: #57939B;
-  --tone-teal-dark: #447A81;
+  --tone-sage: #385733;
+  --tone-sage-dark: #2A4426;
+  --tone-ochre: #5E4E16;
+  --tone-ochre-dark: #473B0E;
+  --tone-teal: #1A545E;
+  --tone-teal-dark: #123E46;
   --tone-slate: #4A6273;
   --tone-slate-dark: #374B59;
 
@@ -596,7 +596,8 @@ button {
 
 .btn-hero-secondary {
   background-color: #25D366;
-  color: #FFFFFF;
+  color: #052E16;
+  font-weight: 800;
   padding: 13px 24px;
   border-radius: var(--radius-md);
   font-weight: 700;
@@ -715,7 +716,8 @@ button {
 .card-desc {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  color: #FFFFFF;
+  opacity: 0.95;
   margin-bottom: 26px;
   flex: 1;
 }
@@ -730,7 +732,7 @@ button {
   letter-spacing: 0.06em;
   color: #FFFFFF;
   opacity: 0.9;
-  border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid #FFFFFF;
   padding-bottom: 4px;
   align-self: flex-start;
 }
@@ -879,8 +881,8 @@ button {
 /* Labā kolonna ar Cirtainajām Iekavām un Sarakstu */
 .highlight-label {
   display: inline-block;
-  background: rgba(211, 47, 47, 0.1);
-  color: var(--color-red);
+  background: #FEE2E2;
+  color: #991B1B;
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -917,7 +919,7 @@ button {
 }
 
 .btn-red-cta {
-  background-color: #E2442F; /* Reference Orange/Red color */
+  background-color: #B91C1C; /* Reference Orange/Red color */
   color: #FFFFFF;
   font-weight: 700;
   padding: 13px 26px;
@@ -1081,8 +1083,9 @@ button {
 }
 
 .b2b-badge.highlight {
-  background: rgba(211, 47, 47, 0.12);
-  color: var(--color-red);
+  background: #FEE2E2;
+  color: #991B1B;
+  font-weight: 800;
 }
 
 .b2b-card h3 {
@@ -1552,7 +1555,7 @@ button {
   padding: 20px;
 }
 
-.video-card-body h4 {
+.video-card-body h3, .video-card-body h4 {
   font-family: var(--font-heading);
   font-size: 1.05rem;
   font-weight: 700;
@@ -1824,8 +1827,9 @@ button {
 }
 
 .live-status-pill.open {
-  background: rgba(34, 197, 94, 0.12);
-  color: #16A34A;
+  background: #DCFCE7;
+  color: #14532D;
+  font-weight: 800;
 }
 
 .live-status-pill .dot {
@@ -1955,7 +1959,8 @@ button {
 
 .btn-whatsapp-large {
   background: #25D366;
-  color: #FFF;
+  color: #052E16;
+  font-weight: 800;
   font-weight: 700;
   font-size: 0.9rem;
   padding: 13px 22px;
@@ -2065,11 +2070,12 @@ button {
 
 .mobile-bar-btn.whatsapp {
   background: #25D366;
-  color: #FFFFFF;
+  color: #052E16;
+  font-weight: 800;
 }
 
 .mobile-bar-btn.whatsapp i {
-  color: #FFFFFF;
+  color: #052E16;
 }
 
 .mobile-bar-btn.sanpro {
@@ -2216,7 +2222,8 @@ button {
 
 .btn-whatsapp-submit {
   background-color: #25D366;
-  color: #FFFFFF;
+  color: #052E16;
+  font-weight: 800;
   font-weight: 700;
   padding: 13px;
   border-radius: var(--radius-md);
@@ -2275,7 +2282,7 @@ button {
 }
 
 .btn-fb-follow {
-  background-color: #1877F2;
+  background-color: #0854B8;
   color: #FFF;
   padding: 10px 18px;
   border-radius: var(--radius-pill);
@@ -2333,8 +2340,8 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(211, 47, 47, 0.1);
-  color: var(--color-red);
+  background: #FEE2E2;
+  color: #991B1B;
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.08em;
