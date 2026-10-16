@@ -1450,7 +1450,7 @@ button {
 
 .video-thumbnail-wrap {
   position: relative;
-  height: 240px;
+  height: 275px;
   overflow: hidden;
   background: #000;
 }
@@ -1459,9 +1459,21 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-  opacity: 0.88;
+  object-position: center 80%;
+  opacity: 0.92;
   transition: var(--transition);
+}
+
+.video-thumb-cena {
+  object-position: center bottom;
+}
+
+.video-thumb-gaidit {
+  object-position: center 85%;
+}
+
+.video-thumb-noliktava {
+  object-position: center 70%;
 }
 
 .tiktok-video-card:hover .video-thumb {
